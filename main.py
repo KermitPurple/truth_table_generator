@@ -1,6 +1,6 @@
 def nloops(n: int, to_loop: 'iterable', func = lambda x: 0,*args):
     if n == 0:
-        print(*args, func(args))
+        print(*args, func(args), sep = ' | ')
         return
     for i in to_loop:
         nloops(n - 1, to_loop, func, *args, i)
@@ -14,7 +14,7 @@ def print_truth_table(eq: str):
             '': lambda a, b: a & b,
             }
     items = list({ch for ch in eq if ch.isalpha()})
-    print(*items, eq)
+    print(*items, eq, sep = ' | ')
     op_char = eq
     for ch in eq:
         if ch.isalpha():
